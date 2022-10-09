@@ -662,6 +662,7 @@ body {
   height: 100%;
   position: fixed;
   background: rgba(0, 0, 0, 0.2);
+  transition: opacity 300ms linear, visibility 300ms linear;
 }
 
 
@@ -672,9 +673,14 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 300ms linear;
 }
 
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+
+}
 
 .modal-btn {
   width: 30px;
