@@ -18,6 +18,7 @@ html {
   --secondary-background-color: #2f303a;
   --section-ourteam-background-color: #f5f4fa;
   --svg-main-color:#afb1b8;
+  --timing-function:cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -141,6 +142,12 @@ body {
 .list-portfolio-substrate {
   border: 1px solid #eeeeee;
   padding: 20px 24px;
+}
+
+.li-portfolio {
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .li-portfolio:hover,
@@ -278,12 +285,15 @@ body {
 }
 
 .site-nav .link {
+  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
-
   text-decoration: none;
   color: var(--primary-text-color);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link.current {
@@ -294,11 +304,31 @@ body {
   margin-right: 50px;
 }
 
+.site-nav .link::after {
+  content:'';
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-text-color);
+  border-radius: 2px;
+  opacity: 0;
+}
+
+.site-nav .link:hover::after {
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
+}
+
 /* Контактная информация */
 
 .header-contacts-icon {
-    fill: var(--svg-main-color);
-    margin-right: 10px;
+  fill: var(--svg-main-color);
+  margin-right: 10px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email-header,
@@ -308,6 +338,9 @@ body {
   display: flex;
   justify-content: center;
   text-align: center;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email-header:hover,
@@ -426,13 +459,11 @@ body {
   background-color: var(--section-ourteam-background-color);
 }
 
-/* .icon {
- fill: var(--svg-main-color);
-}
-
 .soc-icons-icon {
-    fill: var(--svg-main-color);
-}*/
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 .soc-icons-list {
     padding: 0 0;
@@ -455,6 +486,9 @@ body {
     height: 44px;
     border-radius: 50%;
     fill: var(--svg-main-color);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .soc-icons-link:hover,
@@ -510,6 +544,9 @@ body {
 
 .our-clients-icon {
     fill: var(--svg-main-color);
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .list-our-clients-substrate {
@@ -526,6 +563,9 @@ body {
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+    transition-property: border-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* substrate - это подложка, div */
@@ -549,13 +589,15 @@ body {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
-
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
   padding: 10px 32px;
   border-radius: 4px;
   text-align: center;
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.primary:hover,
@@ -573,6 +615,9 @@ body {
   padding: 6px 22px;
   border-radius: 4px;
   text-align: center;
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.secondary:hover,
@@ -622,6 +667,9 @@ body {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .email-footer:hover,
@@ -636,13 +684,16 @@ body {
 
 
 .footer-soc-icons-link {
-    display: flex;
-    padding: 12px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    fill: var(--light-text-color);
+  display: flex;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: var(--light-text-color);
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-icons-link:hover,
