@@ -323,11 +323,7 @@ body {
   color: var(--accent-text-color);
 }
 
-.site-nav li {
-  margin-right: 50px;
-}
-
-.site-nav .link::after {
+.site-nav .link.current:after {
   content:'';
   position: absolute;
   bottom: -1px;
@@ -338,10 +334,11 @@ body {
   border-radius: 2px;
 }
 
-/*.site-nav .link:hover::after {
-  opacity: 1;
-  transition: opacity 250ms var(--timing-function);
+
+.site-nav li {
+  margin-right: 50px;
 }
+
 
 /* Контактная информация */
 
